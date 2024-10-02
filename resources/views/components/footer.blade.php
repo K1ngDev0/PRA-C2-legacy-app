@@ -1,6 +1,28 @@
 
 <footer>
-	© {{ __('misc.copyright') }}
+  © {{ __('misc.copyright') }}
+
+  <!-- Over ons -->
+  <div>
+      <h3>Over ons</h3>
+      <p>Wij zijn een fictief bedrijf dat zich richt op het leveren van uitstekende diensten.</p>
+  </div>
+
+  <!-- Contact gegevens -->
+  <div>
+      <h3>Contact gegevens</h3>
+      <p>Adres: 1234 Straatnaam, Stad, Land</p>
+      <p>Telefoon: +123 456 7890</p>
+      <p>Email: info@fictiefbedrijf.com</p>
+  </div>
+
+  <!-- Social links -->
+  <div>
+      <h3>Volg ons</h3>
+      <a href="https://www.facebook.com/fictiefbedrijf" target="_blank">Facebook</a>
+      <a href="https://www.twitter.com/fictiefbedrijf" target="_blank">Twitter</a>
+      <a href="https://www.linkedin.com/company/fictiefbedrijf" target="_blank">LinkedIn</a>
+  </div>
 </footer>
 
 
