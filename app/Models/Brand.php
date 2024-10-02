@@ -9,11 +9,6 @@ class Brand extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'view_count',
-    ];
-
     public function getNameUrlEncodedAttribute()
     {
         $name_url_encoded = str_replace('/','',$this->name);
