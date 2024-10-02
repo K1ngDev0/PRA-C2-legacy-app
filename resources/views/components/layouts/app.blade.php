@@ -8,8 +8,6 @@
 <x-navbar/>
 
 <div class="container">
-    <div class="row">
-
         <div class="col-md-8">
             <x-header/>
 
@@ -37,10 +35,6 @@
         <div class="row">
             <x-footer/>
         </div>
-
-    </div>
-
-
 </div>
 
 <!-- Bootstrap core JavaScript
