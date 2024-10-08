@@ -10,13 +10,13 @@ class BrandController extends Controller
 {
     public function show($brand_id, $brand_slug)
     {
-        $brand = Brand::findOrFail($brand_id);
-        $brand->increment('visit_count');
-        $manuals = Manual::where('brand_id', $brand_id)->get();
-    
+        $brand = Brand::with('category')->findOrFail($brand_id);
+        $manuals = Manual::where('brand_id', $brand_id)->get(); // Updated to use `where`
+
         return view('pages/manual_list', [
             "brand" => $brand,
-            "manuals" => $manuals
+            "manuals" => $manuals,
+            "category" => $brand->category // Pass the category to the view
         ]);
     }
     
