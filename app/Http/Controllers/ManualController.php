@@ -18,4 +18,26 @@ class ManualController extends Controller
             "brand" => $brand,
         ]);
     }
+    public function edit($id)
+    {
+        $manual = Manual::findOrFail($id);
+        return view('pages.edit_manual', compact('manual'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'filesize' => 'required|integer',
+            'originUrl' => 'required|url',
+            'filename' => 'required|string|max:255',
+            'downloadedServer' => 'required|boolean',
+        ]);
+
+        $manual = Manual::findOrFail($id);
+        $manual->update($request->all());
+
+        return redirect()->route('manuals.edit', $id)->with('success', 'Manual updated successfully');
+    }
+
 }

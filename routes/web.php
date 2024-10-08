@@ -34,6 +34,7 @@ use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\LocaleController;
 
+
 // Homepage
 Route::get('/', function () {
     $brands = Brand::all()->sortBy('name');
@@ -54,5 +55,16 @@ Route::get('/{brand_id}/{brand_slug}/', [BrandController::class, 'show']);
 // Detail page for a manual
 Route::get('/{brand_id}/{brand_slug}/{manual_id}/', [ManualController::class, 'show']);
 
-// Generate sitemaps
-Route::get('/generateSitemap/', [SitemapController::class, 'generate']);
+
+// Edit routes bovenaan
+Route::get('/brands/{id}/edit', [BrandController::class, 'edit'])->name('brands.edit');
+Route::put('/brands/{id}', [BrandController::class, 'update'])->name('brands.update');
+
+// Dynamische routes onderaan
+Route::get('/{brand_id}/{brand_slug}/', [BrandController::class, 'show']);
+Route::get('/{brand_id}/{brand_slug}/{manual_id}/', [ManualController::class, 'show']);
+
+Route::prefix('brands')->group(function () {
+    Route::get('{id}/edit', [BrandController::class, 'edit'])->name('brands.edit');
+    Route::put('{id}', [BrandController::class, 'update'])->name('brands.update');
+});

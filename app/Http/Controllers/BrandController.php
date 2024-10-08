@@ -20,4 +20,10 @@ class BrandController extends Controller
         ]);
 
     }
+
+    public function edit($id)
+    {
+        $brand = Brand::findOrFail($id);
+        return view('pages.edit_brand', compact('brand'));
+    }
 }
