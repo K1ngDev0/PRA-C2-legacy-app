@@ -55,6 +55,7 @@ Route::get('/{brand_id}/{brand_slug}/', [BrandController::class, 'show']);
 // Detail page for a manual
 Route::get('/{brand_id}/{brand_slug}/{manual_id}/', [ManualController::class, 'show']);
 
+Route::get('/manual/{id}/increment-visit', [ManualController::class, 'incrementVisit'])->name('manual.incrementVisit');
 
 // Edit routes bovenaan
 Route::get('/brands/{id}/edit', [BrandController::class, 'edit'])->name('brands.edit');
@@ -68,3 +69,5 @@ Route::prefix('brands')->group(function () {
     Route::get('{id}/edit', [BrandController::class, 'edit'])->name('brands.edit');
     Route::put('{id}', [BrandController::class, 'update'])->name('brands.update');
 });
+
+// web.php
