@@ -13,10 +13,15 @@
 
     <p>{{ __('introduction_texts.type_list', ['brand'=>$brand->name]) }}</p>
 
-
-        @foreach ($manuals as $manual)
+    <p class="downloadText">Download manual(s) here:</p>
+        @foreach ($manuals as $manual) 
+            <div class="downloadManual">
+            <div class="dowloadManualConfine">
+            <button class="downloadButton">
+            
 
             @if ($manual->locally_available)
+                
                 <a href="/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/{{ $manual->id }}/" alt="{{ $manual->name }}" title="{{ $manual->name }}">{{ $manual->name }}</a>
                 ({{$manual->filesize_human_readable}})
             @else
@@ -24,6 +29,10 @@
             @endif
 
             <br />
+            
+            </button>
+            </div>
+            </div>
         @endforeach
 
 </x-layouts.app>

@@ -1915,6 +1915,21 @@ pre code {
     background-color: rgba(255, 255, 255, 0.075);
 }
 
+.downloadText{
+    margin-bottom: .5rem;
+}
+
+.downloadManual{
+    display: flex;
+    flex-direction: column;
+}
+
+.downloadButton{
+    border-color: gray;
+    border-radius: 0.25rem;
+    margin-bottom: .5rem;
+}
+
 @media (max-width: 575.98px) {
     .table-responsive-sm {
         display: block;
