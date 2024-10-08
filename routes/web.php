@@ -39,7 +39,8 @@ use App\Http\Controllers\LocaleController;
 // Homepage
 Route::get('/', function () {
     $categories = Category::all()->sortBy('name');
-    return view('pages.homepage', compact('categories'));
+    $name = 'User';
+    return view('pages.homepage', compact('categories', 'name'));
 });
 
 // Category routes (plaats deze bovenaan)

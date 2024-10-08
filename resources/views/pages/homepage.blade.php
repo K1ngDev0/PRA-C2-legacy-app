@@ -1,6 +1,10 @@
 <x-layouts.app>
+    <br>
+    <h1>Welkom, {{ $name }}!</h1>
+    <br>
 
     <h1>All Categories</h1>
+
 
     <div class="container">
         <div class="row">
