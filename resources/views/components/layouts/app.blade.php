@@ -15,9 +15,6 @@
                 <li>
                     <a href="/" title="{{ __('misc.home_alt') }}" alt="{{ __('misc.home_alt') }}">{{ __('misc.home') }}</a>
                 </li>
-                <li>
-                    <a href="/contact">Contact</a>
-                </li>
                 {{ $breadcrumb ?? '' }}
             </ul>
 
