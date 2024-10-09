@@ -24,8 +24,7 @@
                 
             <a href="{{ route('manual.incrementVisit', ['id' => $manual->id]) }}" 
                 alt="{{ $manual->name }}" 
-                title="{{ $manual->name }}">{{ $manual->name }}</a>
-                ({{ $manual->filesize_human_readable }})
+                title="{{ $manual->name }}">{{ $manual->name }} ({{ $manual->filesize_human_readable }})</a>
            
 
             <br />
