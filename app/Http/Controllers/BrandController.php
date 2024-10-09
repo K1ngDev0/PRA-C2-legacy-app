@@ -12,6 +12,8 @@ class BrandController extends Controller
     {
         $brand = Brand::with('category')->findOrFail($brand_id);
         $manuals = Manual::where('brand_id', $brand_id)->get(); // Updated to use `where`
+        $brand->increment('visit_count');
+
 
         return view('pages/manual_list', [
             "brand" => $brand,
