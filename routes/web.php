@@ -41,7 +41,10 @@ use App\Http\Controllers\LocaleController;
 Route::get('/', function () {
     $categories = Category::all()->sortBy('name');
     $name = 'User';
-    $popularBrands = Brand::orderBy('visit_count', 'desc')->take(5)->get();
+    $popularBrands = Brand::with('category') // Ensure you load the category relationship
+        ->orderBy('visit_count', 'desc')
+        ->take(5)
+        ->get();
     $popularManuals = Manual::orderBy('visit_count', 'desc')->take(10)->get();
     
     return view('pages.homepage', compact('categories', 'name', 'popularBrands', 'popularManuals'));

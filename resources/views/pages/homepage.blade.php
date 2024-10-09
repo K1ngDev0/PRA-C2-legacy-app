@@ -8,7 +8,9 @@
     <ul>
         @if(!empty($popularBrands) && $popularBrands->count() > 0)
             @foreach($popularBrands as $brand)
-                <li>{{ $brand->name }} - {{ $brand->visit_count }} visits</li> <!-- Weergeven als [type] -->
+                <li>
+                    <a href="/category/{{ $brand->category->id }}/{{ Str::slug($brand->category->name) }}/{{ $brand->id }}/{{ $brand->getNameUrlEncodedAttribute() }}/">{{ $brand->name }}</a> - {{ $brand->visit_count }} visits
+                </li>
             @endforeach
         @else
             <li>Er zijn geen populaire handleidingen beschikbaar.</li>
