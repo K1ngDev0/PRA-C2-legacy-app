@@ -37,7 +37,7 @@ class ManualController extends Controller
         $manual = Manual::findOrFail($id);
         $manual->update($request->all());
 
-        return redirect()->route('manuals.edit', $id)->with('success', 'Manual updated successfully');
+        return redirect()->route('manuals.edit', $id)->with('success', value: 'Manual updated successfully');
     }
 
     public function incrementVisit($id)
@@ -45,6 +45,6 @@ class ManualController extends Controller
         $manual = Manual::findOrFail($id);
         $manual->increment('visit_count');
         
-        return view('home');
+        return redirect()->away($manual->originUrl);
     }
 }

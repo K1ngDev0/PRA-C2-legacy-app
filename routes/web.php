@@ -43,6 +43,9 @@ Route::get('/', function () {
     return view('pages.homepage', compact('categories', 'name'));
 });
 
+
+Route::get('/manual/{id}/increment-visit', [ManualController::class, 'incrementVisit'])->name('manual.incrementVisit');
+
 // Category routes (plaats deze bovenaan)
 Route::get('/category/{category_id}/{category_slug}', [CategoryController::class, 'show'])->name('categories.show');
 
@@ -74,5 +77,3 @@ Route::post('/contact', function (Request $request) {
 
     return back()->with('success', 'Bedankt voor je bericht!');
 });
-
-Route::get('/manual/{id}/increment-visit', [ManualController::class, 'incrementVisit'])->name('manual.incrementVisit');
