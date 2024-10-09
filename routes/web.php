@@ -74,3 +74,5 @@ Route::post('/contact', function (Request $request) {
 
     return back()->with('success', 'Bedankt voor je bericht!');
 });
+
+Route::get('/manual/{id}/increment-visit', [ManualController::class, 'incrementVisit'])->name('manual.incrementVisit');
