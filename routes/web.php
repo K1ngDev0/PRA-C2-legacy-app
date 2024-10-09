@@ -27,6 +27,7 @@ Productcat:		/category/12/Computers/
 
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Manual;
 use Illuminate\Http\Request;
 use App\Http\Controllers\RedirectController;
 use Illuminate\Support\Facades\File;
@@ -40,7 +41,16 @@ use App\Http\Controllers\LocaleController;
 Route::get('/', function () {
     $categories = Category::all()->sortBy('name');
     $name = 'User';
-    return view('pages.homepage', compact('categories', 'name'));
+    $popularBrands = Brand::with('category')
+        ->orderBy('visit_count', 'desc')
+        ->take(5)
+        ->get();
+    $popularManuals = Manual::with('brand')
+        ->orderBy('visit_count', 'desc')
+        ->take(10)
+        ->get();
+
+    return view('pages.homepage', compact('categories', 'name', 'popularBrands', 'popularManuals'));
 });
 
 

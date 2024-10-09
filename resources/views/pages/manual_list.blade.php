@@ -24,8 +24,7 @@
                 
             <a href="{{ route('manual.incrementVisit', ['id' => $manual->id]) }}" 
                 alt="{{ $manual->name }}" 
-                title="{{ $manual->name }}">{{ $manual->name }}</a>
-                ({{ $manual->filesize_human_readable }})
+                title="{{ $manual->name }}">{{ $manual->name }} ({{ $manual->filesize_human_readable }})</a>
            
 
             <br />
@@ -35,10 +34,10 @@
             </div>
         @endforeach
 
-    <!-- Edit knop voor de brand -->
+    <!-- Edit knop voor de brand
     <a href="{{ route('brands.edit', $brand->id) }}" class="btn btn-primary">
         {{ __('Edit Brand') }}
-    </a>
+    </a> -->
 
 
 

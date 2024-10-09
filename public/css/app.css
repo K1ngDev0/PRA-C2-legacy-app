@@ -164,12 +164,12 @@ sup {
 
 a {
     color: #16492c;
-    text-decoration: none;
+    text-decoration: underline;
     background-color: transparent;
 }
 a:hover {
     color: #b4b4b4;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 a:not([href]):not([class]) {
@@ -583,7 +583,10 @@ pre code {
     background-color: #e9ecef;
     border-radius: 0.25rem;
     margin-bottom: 1rem;
+    padding-top: 1rem;
 }
+
+
 
 .no-gutters {
     margin-right: 0;
