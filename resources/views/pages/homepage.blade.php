@@ -20,18 +20,23 @@
 
     <h2>Populaire Handleidingen</h2>
     <div class="row">
-    <ul>
-        @if(!empty($popularManuals) && $popularManuals->count() > 0)
-            @foreach($popularManuals as $manual)
-                <li><a href="{{ route('manual.incrementVisit', ['id' => $manual->id]) }}" 
-                    alt="{{ $manual->name }}" 
-                    title="{{ $manual->name }}">{{ $manual->name }} ({{ $manual->filesize_human_readable }})</a> - {{ $manual->visit_count }} visits</li>
-            @endforeach
-        @else
-            <li>Er zijn geen populaire handleidingen beschikbaar.</li>
-        @endif
-    </ul>
+        <ul>
+            @if(!empty($popularManuals) && $popularManuals->count() > 0)
+                @foreach($popularManuals as $manual)
+                    <li>
+                        {{ $manual->brand->name }} |
+                        <a href="{{ route('manual.incrementVisit', ['id' => $manual->id]) }}" 
+                            alt="{{ $manual->name }}" 
+                            title="{{ $manual->name }}">{{ $manual->name }} ({{ $manual->filesize_human_readable }})</a> - {{ $manual->visit_count }} visits
+                    </li>
+                    
+                @endforeach
+            @else
+                <li>Er zijn geen populaire handleidingen beschikbaar.</li>
+            @endif
+        </ul>
     </div>
+
     
     
 
