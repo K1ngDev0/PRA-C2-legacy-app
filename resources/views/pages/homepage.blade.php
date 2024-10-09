@@ -4,6 +4,7 @@
     <br>
 
     <h2>Populaire Merken</h2>
+    <div class="row">
     <ul>
         @if(!empty($popularBrands) && $popularBrands->count() > 0)
             @foreach($popularBrands as $brand)
@@ -13,8 +14,10 @@
             <li>Er zijn geen populaire handleidingen beschikbaar.</li>
         @endif
     </ul>
+    </div>
 
     <h2>Populaire Handleidingen</h2>
+    <div class="row">
     <ul>
         @if(!empty($popularManuals) && $popularManuals->count() > 0)
             @foreach($popularManuals as $manual)
@@ -24,11 +27,12 @@
             <li>Er zijn geen populaire handleidingen beschikbaar.</li>
         @endif
     </ul>
+    </div>
     
     
 
     <h1>All Categories</h1>
-
+    <div class="make-up">
     <div class="container">
         <div class="row">
             @foreach($categories as $category)
@@ -40,6 +44,7 @@
                     </ul>
                 </div>
             @endforeach
+        </div>
         </div>
     </div>
 

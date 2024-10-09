@@ -34,10 +34,10 @@
             </div>
         @endforeach
 
-    <!-- Edit knop voor de brand -->
+    <!-- Edit knop voor de brand
     <a href="{{ route('brands.edit', $brand->id) }}" class="btn btn-primary">
         {{ __('Edit Brand') }}
-    </a>
+    </a> -->
 
 
 
