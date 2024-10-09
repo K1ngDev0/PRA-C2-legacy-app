@@ -11,7 +11,7 @@ class Brand extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class, 'categorie_id');
+        return $this->belongsTo(Category::class);
     }
 
     public function getNameUrlEncodedAttribute()
