@@ -8,8 +8,9 @@ use App\Models\Manual;
 
 class BrandController extends Controller
 {
-    public function show($brand_id, $brand_slug)
+    public function show($category_id, $category_slug, $brand_id, $brand_slug)
     {
+    
         $brand = Brand::with('category')->findOrFail($brand_id);
         $manuals = Manual::where('brand_id', $brand_id)->get(); // Updated to use `where`
         $brand->increment('visit_count');
